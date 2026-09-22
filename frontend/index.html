@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Data Leak Detector</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">LOCAL-FIRST PRIVACY TOOL</p>
+      <h1>Personal Data Leak Detector</h1>
+      <p class="subtitle">Check text and files for exposed personal information and secrets before sharing them.</p>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <label class="file-button">Choose text file<input id="fileInput" type="file" accept=".txt,.csv,.json,.log,.md,.xml,.html,.yaml,.yml"></label>
+        <button id="scanButton" class="primary">Scan text</button>
+        <button id="clearButton" class="secondary">Clear</button>
+      </div>
+      <textarea id="textInput" maxlength="2097152" placeholder="Paste text here. Example: contact alice@example.com or rotate api_key=..."></textarea>
+      <p class="privacy-note">Your input is processed by this application and is not saved by the server.</p>
+    </section>
+
+    <section id="results" class="card results hidden" aria-live="polite"></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
